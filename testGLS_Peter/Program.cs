@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace testGLS_Peter
@@ -9,22 +10,51 @@ namespace testGLS_Peter
         {
 
             Random rnd = new Random();
-     //       int number1 = rnd.Next(1, 36);
+         //   var numberToRand = 36;
+            //int number1 = rnd.Next(1, numberToRand);
             int[] lottoArray = new int[6];
-
+          //  List<int> sequence = Enumerable.Range(1, 36).ToList();
+            
             Console.WriteLine("Over the loop");
-
-            for (int i = 0; i < 6; i++)
+        
+            for (int i = 0; i < lottoArray.Length; i++)
             {
                 Console.WriteLine($"Number of interation: {i}");
+                int numberToPush = rnd.Next(1, 12);
 
 
-                int numberToPush = rnd.Next(1, 7);
-                Console.WriteLine(numberToPush);
-                if (lottoArray.Contains(numberToPush) == false)
+                for (int j=0; j<i; j++)
                 {
-                    lottoArray[i] = numberToPush;
+                    Console.WriteLine($"Number of interation inside: {j}");
+                    //   lottoArray[i] = numberToPush;
+                    Console.WriteLine($"Wylosowano {numberToPush}");
+               /*     do
+                    {
+                        lottoArray[i] = numberToPush;
+                    }
+
+                    while
+
+                        (lottoArray[j] != lottoArray[j- i]);
+*/
+                    if (lottoArray[j] == lottoArray[i])
+                    {
+
+                        Console.WriteLine($"Jest pow. {lottoArray[j]} , {lottoArray[i - j]} ");
+
+                        lottoArray[j] = numberToPush;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Nie jest pow. {lottoArray[j]} , {lottoArray[i - j]} ");
+
+                    }
                 }
+
+             
+                //Losowanie bez powtórzeń
+                
+           
 
                Console.WriteLine(lottoArray[i]);
             }
@@ -32,7 +62,7 @@ namespace testGLS_Peter
          
             Console.WriteLine("[{0}]", string.Join(", ", lottoArray));
 
-
+/*
 
 
 
@@ -110,8 +140,8 @@ namespace testGLS_Peter
 
 
             //User can set posiotion of console log:
-            string bananasText = "Bananas";
-            int bananasCount = 56789;
+            //         string bananasText = "Bananas";
+            //     int bananasCount = 56789;
 
 
 
@@ -163,11 +193,11 @@ namespace testGLS_Peter
 
             var bytes = new byte[5];
             Console.WriteLine(bytes);
-           // rand.NextBytes(bytes);
-        //    Console.WriteLine("Five random byte values:");
-        //    foreach (byte byteValue in bytes)
-        //    Console.Write("{0, 5}", byteValue);
-        //    Console.WriteLine();
+            // rand.NextBytes(bytes);
+            //    Console.WriteLine("Five random byte values:");
+            //    foreach (byte byteValue in bytes)
+            //    Console.Write("{0, 5}", byteValue);
+            //    Console.WriteLine();
 
 
             //
@@ -181,7 +211,7 @@ namespace testGLS_Peter
 
 
 
-            //
+            //*/
         }
     }
 }

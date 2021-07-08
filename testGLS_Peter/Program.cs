@@ -21,7 +21,7 @@ namespace testGLS_Peter
             //  userLottoVol2.ForEach(Console.WriteLine);
 
 
-            for (int numberOfGames = 0; numberOfGames <= 14000000; numberOfGames++)
+            for (int numberOfGames = 0; numberOfGames <= 14; numberOfGames++)
             {
 
                 //Let's play
@@ -31,7 +31,7 @@ namespace testGLS_Peter
 
                 while (myLottoVol2.Count < 6)
                 {
-                    int numberToPushVol2 = rnd.Next(1, 49);
+                    int numberToPushVol2 = rnd.Next(1, 9);
 
                     bool alreadyExistNumber = myLottoVol2.Contains(numberToPushVol2);
                     //      Console.WriteLine($"Number to push: {numberToPushVol2}");
@@ -58,7 +58,7 @@ namespace testGLS_Peter
 
                 kindOfWinners.Add(howManyGoodNumbers);
 
-             //   Console.WriteLine("[{0}]", string.Join(", ", kindOfWinners));
+                Console.WriteLine("[{0}]", string.Join(", ", kindOfWinners));
 
 
          
@@ -77,22 +77,30 @@ namespace testGLS_Peter
 
 
             }
-
-
-            Console.WriteLine($"After {kindOfWinners.IndexOf(3)} draw lots you have hit 3 numbers");
-            Console.WriteLine($"After {kindOfWinners.IndexOf(4)} draw lots you have hit 4 numbers");
-
-            if (kindOfWinners.IndexOf(5) > 0)
+            for(int i =1; i<=6; i++) {
+                if (kindOfWinners.IndexOf(i) > 0)
+                {
+                    Console.WriteLine($"After {kindOfWinners.IndexOf(i)} draw lots you have hit {i} numbers");
+                } else
+                {
+                    Console.WriteLine($"You did not hit any {i} numbers");
+                }
+            }
+           
+           /* if (kindOfWinners.IndexOf(5) > 0)
             {
-                Console.WriteLine($"After {kindOfWinners.IndexOf(5)} draw lots you have hit 5 numbers");
+              Console.WriteLine($"After {kindOfWinners.IndexOf(5)} draw lots you have hit 5 numbers");
             }
 
           
             if (kindOfWinners.IndexOf(6) > 0)
             {
-                Console.WriteLine($"After {kindOfWinners.IndexOf(6)} draw lots you have hit 6 numbers");
+              Console.WriteLine($"After {kindOfWinners.IndexOf(6)} draw lots you have hit 6 numbers");
+            } else
+            {
+              Console.WriteLine($"You did not hit 6 numbers");
             }
-
+*/
 
 
 
